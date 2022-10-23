@@ -9,7 +9,10 @@ public class StudentList {
     }
 
     StudentList(StudentList studentList) {
-        this.List = studentList.List;
+        this.List = new ArrayList<>();
+        for (Student student : studentList.List){
+            this.List.add(new Student(student.getFirstname(), student.getLastname(), student.getStudentId(), student.getWeight(), new Date(student.getBirthday().getTime())));
+        }
     }
 
     boolean add(Student student) {
